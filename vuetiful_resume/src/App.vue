@@ -11,13 +11,15 @@
 import Main from './components/Main'
 import AboutMe from './components/AboutMe'
 import Education from './components/Education'
+import Career from './components/Career'
 
 export default {
   name: 'App',
   components: {
     Main,
 	AboutMe,
-	Education
+	Education,
+	Career
   },
   data () {
     return {
