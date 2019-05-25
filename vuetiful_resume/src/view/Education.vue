@@ -17,7 +17,7 @@
 			  {{ edu.type }}
 		    </p>
 		    <p>
-		      {{ edu.description }}	  
+		      {{ edu.description }}
 		    </p>
 		    <p>
 		      {{ edu.period }}	  

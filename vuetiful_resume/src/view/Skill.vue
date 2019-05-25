@@ -1,6 +1,6 @@
 <template>
   <v-container>
-	  about page
+	skill
   </v-container>
 </template>
 
