@@ -1,12 +1,13 @@
 <template>
-  <v-footer
+<v-container>
+  <v-footer xs12
     dark
     height="auto"
   >
     <v-card
       flat
       tile
-      class="indigo lighten-1 white--text text-xs-center"
+      class="blue-grey darken-3 lighten-1 white--text text-xs-center"
     >
       <v-card-text>
         <v-btn
@@ -30,6 +31,7 @@
       </v-card-text>
     </v-card>
   </v-footer>
+	</v-container>
 </template>
 
 <script>

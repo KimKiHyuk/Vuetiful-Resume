@@ -1,9 +1,9 @@
 <template>
   <v-container>
-    <v-flex xs12>
+    <v-flex>
 	  <v-card>	
 	    <v-layout>
-          <v-flex xs12 md4>
+          <v-flex>
             <div class="text-xs-center">
               <v-avatar class="ma-4" :tile="tile" :size=150 color="grey lighten-4">
                 <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar">
@@ -14,7 +14,7 @@
               </div>	
             </div>
           </v-flex>
-          <v-flex xs12>
+          <v-flex>
             <v-card-title primary-title>
           	  <div class="headline">{{ info.greet }}</div>
         	</v-card-title>

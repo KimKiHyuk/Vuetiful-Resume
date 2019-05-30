@@ -1,10 +1,10 @@
 <template>
   <v-container>
-	<v-flex xs12>
-		<v-toolbar :dark="true">
+	<v-flex height='58px'>
+     <v-toolbar :dark="true">
       	<v-toolbar-title>Key Resume</v-toolbar-title>
       	<v-spacer></v-spacer>
-        	<v-toolbar-items class="hidden-sx-and-down">
+        	<v-toolbar-items min-width='48px'>
           	<v-btn flat to="/AboutMe" round=data.isRound>About Me</v-btn>
           	<v-btn flat to="/Education" round=data.isRound>Education</v-btn>
           	<v-btn flat to="/Career" round=data.isRound>Career</v-btn>
