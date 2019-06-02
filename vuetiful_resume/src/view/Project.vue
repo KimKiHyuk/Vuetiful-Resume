@@ -10,7 +10,7 @@
       <v-card color='blue-grey darken-4'>
         <v-card-text>{{ item.description }} </v-card-text>
 		<v-card color='blue-grey darken-3'>
-	      <v-card-text> 
+	      <v-card-text>
 	        <template v-for="tech in item.tech">
 	        <v-spacer></v-spacer>
             {{ tech.skill }} : {{ tech.usage }}

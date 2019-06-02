@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "dev": "webpack-dev-server --inline --progress --host 172.18.0.3 --disableHostCheck true --port 8080 --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --host 172.17.0.2 --disableHostCheck true --port 8080 --config build/webpack.dev.conf.js",
     "start": "npm run dev"
   },
   "dependencies": {

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Header from '@/components/Header.vue'
 import AboutMe from '@/view/AboutMe.vue'
 import Education from '@/view/Education.vue'
 import Career from '@/view/Career.vue'
@@ -13,33 +12,33 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Header',
+      name: 'Home',
       component: AboutMe
     },
-	{
-		path: '/AboutMe',
-		name: 'AboutMe',
-		component: AboutMe
-	},
-	{
-		path: '/Education',
-		name: 'Education',
-		component: Education
-	},
-	{
-		path: '/Career',
-		name: 'Career',
-		component: Career
-	},
-	{
-		path: '/Skill',
-		name: 'Skill',
-		component: Skill
-	}, 
-	{
-		path: '/Project',
-		name: 'Project',
-		component: Project
-	},
+    {
+      path: '/AboutMe',
+      name: 'AboutMe',
+      component: AboutMe
+    },
+    {
+      path: '/Education',
+      name: 'Education',
+      component: Education
+    },
+    {
+      path: '/Career',
+      name: 'Career',
+      component: Career
+    },
+    {
+      path: '/Skill',
+      name: 'Skill',
+      component: Skill
+    },
+    {
+      path: '/Project',
+      name: 'Project',
+      component: Project
+    }
   ]
 })
