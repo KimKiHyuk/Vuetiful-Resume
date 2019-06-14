@@ -1,18 +1,18 @@
 <template>
   <v-container>
-    <v-expansion-panel expand dark>
+    <v-expansion-panel expand>
       <v-expansion-panel-content v-for="(item,i) in info" :key="i">
         <template v-slot:header>
           <div class="title font-weight-black">{{ item.title }}</div>
         </template>
-        <v-card color="blue-grey darken-4">
+        <v-card color="grey lighten-5">
           <v-card-text>
             <blockquote class="blockquote"> {{ item.description }} </blockquote>
 
           </v-card-text>
-          <v-card color="blue-grey darken-3">
+          <v-card color="grey lighten-3">
             <v-card-text>
-              <div class="font-weight-medium ml-3" v-for="(tech, j) in item.tech" :key="j">
+              <div class="subheading font-weight-medium ml-3" v-for="(tech, j) in item.tech" :key="j">
                 {{ tech.skill }} : {{ tech.usage }}
               </div>
             </v-card-text>
