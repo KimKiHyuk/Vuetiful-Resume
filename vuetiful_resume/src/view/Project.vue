@@ -6,12 +6,15 @@
           <div class="title font-weight-black">{{ item.title }}</div>
         </template>
         <v-card color="blue-grey darken-4">
-          <v-card-text>{{ item.description }}</v-card-text>
+          <v-card-text>
+            <blockquote class="blockquote"> {{ item.description }} </blockquote>
+
+          </v-card-text>
           <v-card color="blue-grey darken-3">
             <v-card-text>
-              <template v-for="tech in item.tech">
+              <div class="font-weight-medium ml-3" v-for="(tech, j) in item.tech" :key="j">
                 {{ tech.skill }} : {{ tech.usage }}
-              </template>
+              </div>
             </v-card-text>
             <v-card-actions>
               <v-flex class="text-xs-right">
