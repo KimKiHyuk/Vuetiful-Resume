@@ -60,6 +60,9 @@ export default {
             },
             {
               name: "linux device driver"
+            },
+            {
+              name: "kabasdasdasda"
             }
           ]
         },
