@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <v-flex>
       <v-card>
         <v-layout>
           <v-flex>
@@ -22,7 +21,6 @@
           </v-flex>
         </v-layout>
       </v-card>
-    </v-flex>
   </v-container>
 </template>
 
