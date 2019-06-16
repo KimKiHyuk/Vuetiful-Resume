@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-timeline>
-      <v-timeline-item v-for="(career, i) in careerTable" :key="i" :color="career.color" small>
+      <v-timeline-item v-for="(career, i) in allInformation" :key="i" :color="career.color" small>
         <template v-slot:opposite>
           <span
             :class="`headline font-weight-bold ${career.color}--text`"
@@ -17,46 +17,18 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
+  name: 'Career',
+  methods: mapActions ('careerStore', ['fetchInformation']),
+  computed: mapGetters ('careerStore', ['allInformation']),
+  created () {
+    this.$store.dispatch('careerStore/fetchInformation')
+  },
   data() {
     return {
-      careerTable: [
-        {
-          color: "cyan",
-          year: "1960",
-          month: "1",
-          company: "google inc",
-          experience: "honey sucker"
-        },
-        {
-          color: "green",
-          year: "1970",
-          month: "2",
-          company: "microsoft",
-          experience: "아무것도 안함"
-        },
-        {
-          color: "pink",
-          year: "1980",
-          month: "3",
-          company: "naver",
-          experience: "월급 축냄"
-        },
-        {
-          color: "amber",
-          year: "1990",
-          month: "4",
-          company: "kakao",
-          experience: "업무시간에 잠"
-        },
-        {
-          color: "orange",
-          year: "2000",
-          month: "5",
-          company: "ROKCC",
-          experience: "인턴"
-        }
-      ]
+      
     };
   }
 };

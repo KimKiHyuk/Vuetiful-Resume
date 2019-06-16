@@ -6,26 +6,27 @@ const state = {
 }
 
 const getters = {
-  allData: () => state.information
+  allInformation: () => state.information
 }
 
 const actions = {
-  fetchData ({ commit }) {
-    console.log('actions')
+  fetchInformation ({ commit }) {
+    console.log('fetch aboutme')
     // const response = await axios.get('url') // mapping with env server
-    const fetched = resume.fetchDataFromServer()
-    console.log(fetched.information)
-    commit('setAboutme', fetched.information)
+    const informationFromServer = resume.fetchAboutMeFromServer()
+    console.log(informationFromServer.information)
+    commit('setAboutme', informationFromServer.information)
   }
 }
 
 const mutations = {
-  setAboutme: (state, data) => {
-    state.information = data
+  setAboutme: (state, information) => {
+    state.information = information
   }
 }
 
 export default {
+  namespaced: true,
   state,
   getters,
   actions,
