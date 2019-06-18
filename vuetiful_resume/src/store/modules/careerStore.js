@@ -1,4 +1,4 @@
-import resume from "../../api/resume";
+import resume from '../../api/resume'
 
 const state = {
   information: []
@@ -10,10 +10,10 @@ const getters = {
 
 const actions = {
   fetchInformation ({ commit }) {
-    console.log("fetch career")
+    console.log('fetch career')
     const informationFromServer = resume.fetchCareerFromServer()
     console.log(informationFromServer.information)
-    commit("setCareer", informationFromServer.information)
+    commit('setCareer', informationFromServer.information)
   }
 }
 

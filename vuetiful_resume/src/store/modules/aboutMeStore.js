@@ -1,4 +1,3 @@
-// import axios from 'axios'
 import resume from '../../api/resume'
 
 const state = {
@@ -10,12 +9,9 @@ const getters = {
 }
 
 const actions = {
-  fetchInformation ({ commit }) {
-    console.log('fetch aboutme')
-    // const response = await axios.get('url') // mapping with env server
-    const informationFromServer = resume.fetchAboutMeFromServer()
-    console.log(informationFromServer.information)
-    commit('setAboutme', informationFromServer.information)
+  async fetchInformation ({ commit }) {
+    const response = await resume.fetchAboutMeFromServer()
+    commit('setAboutme', response.data.information)
   }
 }
 

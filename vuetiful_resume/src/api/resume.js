@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const mockAboutme = {
   information: {
     name: '김기혁',
@@ -12,45 +14,48 @@ const mockAboutme = {
 const mockCareer = {
   information: [
     {
-      color: "cyan",
-      year: "1960",
-      month: "1",
-      company: "google inc",
-      experience: "honey sucker"
+      color: 'cyan',
+      year: '1960',
+      month: '1',
+      company: 'google inc',
+      experience: 'honey sucker'
     },
     {
-      color: "green",
-      year: "1970",
-      month: "2",
-      company: "microsoft",
-      experience: "아무것도 안함"
+      color: 'green',
+      year: '1970',
+      month: '2',
+      company: 'microsoft',
+      experience: '아무것도 안함'
     },
     {
-      color: "pink",
-      year: "1980",
-      month: "3",
-      company: "naver",
-      experience: "월급 축냄"
+      color: 'pink',
+      year: '1980',
+      month: '3',
+      company: 'naver',
+      experience: '월급 축냄'
     },
     {
-      color: "amber",
-      year: "1990",
-      month: "4",
-      company: "kakao",
-      experience: "업무시간에 잠"
+      color: 'amber',
+      year: '1990',
+      month: '4',
+      company: 'kakao',
+      experience: '업무시간에 잠'
     },
     {
-      color: "orange",
-      year: "2000",
-      month: "5",
-      company: "ROKCC",
-      experience: "인턴"
+      color: 'orange',
+      year: '2000',
+      month: '5',
+      company: 'ROKCC',
+      experience: '인턴'
     }
   ]
 }
 
 export default {
   name: 'api',
-  fetchAboutMeFromServer: () => mockAboutme,
+  fetchAboutMeFromServer: async () => {
+    const response = await axios.get('http://keykim.iptime.org:8081/aboutme')
+    return response
+  },
   fetchCareerFromServer: () => mockCareer
 }
