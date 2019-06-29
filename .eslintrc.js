@@ -14,5 +14,6 @@ module.exports = {
     globals: {},
     settings: {
     },
+   'max-len': ["error", { "code": 1000 }]
   },
 };
