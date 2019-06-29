@@ -33,7 +33,6 @@ export default {
   computed: mapGetters('aboutMeStore', ['allInformation']),
   created() {
     this.$store.dispatch('aboutMeStore/fetchInformation');
-    console.log('created about me');
   },
 };
 </script>

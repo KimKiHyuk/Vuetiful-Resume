@@ -21,6 +21,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/vuetify": "0.5.5",
+    "axios": "^0.19.0",
     "eslint-import-resolver-nuxt": "^0.1.5",
     "nuxt": "^2.0.0",
     "vue": "^2.6.10",

@@ -1,5 +1,6 @@
-// import axios from 'axios';
+import axios from 'axios';
 
+// eslint-disable-next-line no-unused-vars
 const mockAboutme = {
   information: {
     name: 'Key',
@@ -53,10 +54,22 @@ const mockCareer = {
 
 export default {
   name: 'api',
-  fetchAboutMeFromServer: () => {
-    // const response = await axios.get('http://keykim.iptime.org:8081/aboutme');
-    const response = mockAboutme;
-    return response;
+  fetchAboutMeFromServer: async () => {
+    try {
+      const response = await axios.get('http://keykim.iptime.org:8081/aboutme');
+      return response.information;
+    } catch (err) {
+      // action when error occurs
+    }
+    return mockAboutme.information;
   },
-  fetchCareerFromServer: () => mockCareer,
+  fetchCareerFromServer: async () => {
+    try {
+      const response = await axios.get('http://keykim.iptime.org:8081/career');
+      return response.information;
+    } catch (err) {
+      // action when error occurs
+    }
+    return mockCareer.information;
+  },
 };

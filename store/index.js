@@ -12,7 +12,6 @@ const createStore = () => new Vuex.Store({
     // eslint-disable-next-line no-unused-vars
     nuxtServerInit({ commit }) {
       console.log('server init');
-      // commit('aboutMeStore/setAboutme', resume.fetchAboutMeFromServer().information);
     },
   },
   modules: {

@@ -9,9 +9,9 @@ const getters = {
 };
 
 const actions = {
-  fetchInformation({ commit }) {
-    const informationFromServer = resume.fetchCareerFromServer();
-    commit('setCareer', informationFromServer.information);
+  async fetchInformation({ commit }) {
+    const response = await resume.fetchCareerFromServer();
+    commit('setCareer', response);
   },
 };
 

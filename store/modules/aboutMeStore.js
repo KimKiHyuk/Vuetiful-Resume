@@ -9,9 +9,9 @@ const getters = {
 };
 
 const actions = {
-  fetchInformation({ commit }) {
-    const response = resume.fetchAboutMeFromServer();
-    commit('setAboutme', response.information);
+  async fetchInformation({ commit }) {
+    const response = await resume.fetchAboutMeFromServer();
+    commit('setAboutme', response);
   },
 };
 
