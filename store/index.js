@@ -1,6 +1,7 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
 import aboutMeStore from './modules/aboutMeStore';
+import careerStore from './modules/careerStore';
 // import resume from '../api/resume';
 
 // Load Vuex
@@ -16,6 +17,7 @@ const createStore = () => new Vuex.Store({
   },
   modules: {
     aboutMeStore,
+    careerStore,
   },
 });
 

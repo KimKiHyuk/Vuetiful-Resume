@@ -45,10 +45,10 @@ export default {
       drawer: false,
       items: [
         { title: 'AboutMe', icon: 'assignment_ind', router: '/AboutMe' },
-        { title: 'Career', icon: 'location_city', router: '/Test2' },
-        { title: 'Education', icon: 'school', router: '/index' },
-        { title: 'Skill', icon: 'edit', router: '/index' },
-        { title: 'Project', icon: 'work', router: '/index' },
+        { title: 'Career', icon: 'location_city', router: '/Career' },
+        { title: 'Education', icon: 'school', router: '/Education' },
+        { title: 'Skill', icon: 'edit', router: '/Skill' },
+        { title: 'Project', icon: 'work', router: '/Project' },
       ],
     };
   },
