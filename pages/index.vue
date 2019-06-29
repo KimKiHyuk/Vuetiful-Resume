@@ -1,15 +1,9 @@
 <template>
-  <div>
-    <h3>index.js</h3>
-  </div>
+  <div></div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {}
-  }
-}
+export default {};
 </script>
 
 <style>

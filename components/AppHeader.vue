@@ -2,7 +2,7 @@
   <v-container>
     <nav>
       <v-toolbar flat app>
-        <v-toolbar-side-icon @click="drawer = !drawer" />
+        <v-toolbar-side-icon @click="drawer = !drawer"/>
         <v-toolbar-title>
           <span>Key Resume</span>
         </v-toolbar-title>
@@ -22,7 +22,7 @@
         </v-list>
 
         <v-list class="pt-0" dense>
-          <v-divider />
+          <v-divider/>
           <v-list-tile v-for="item in items" :key="item.title" nuxt-link :to="item.router">
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
@@ -48,10 +48,9 @@ export default {
         { title: 'Career', icon: 'location_city', router: '/Test2' },
         { title: 'Education', icon: 'school', router: '/index' },
         { title: 'Skill', icon: 'edit', router: '/index' },
-        { title: 'Project', icon: 'work', router: '/index' }
-      ]
-    }
-  }
-}
-
+        { title: 'Project', icon: 'work', router: '/index' },
+      ],
+    };
+  },
+};
 </script>

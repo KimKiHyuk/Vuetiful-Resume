@@ -9,10 +9,10 @@ export default {
   name: 'Test',
   data() {
     return {
-      test: 'hi'
-    }
-  }
-}
+      test: 'hi',
+    };
+  },
+};
 </script>
 
 <style>
