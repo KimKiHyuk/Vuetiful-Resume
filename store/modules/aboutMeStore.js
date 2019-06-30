@@ -1,4 +1,4 @@
-import resume from '../../api/resume';
+import { API_LIST, fetchAllFromServer } from '../../api/resume';
 
 const state = {
   information: {},
@@ -10,8 +10,8 @@ const getters = {
 
 const actions = {
   async fetchInformation({ commit }) {
-    const response = await resume.fetchAboutMeFromServer();
-    commit('setAboutme', response);
+    const response = await fetchAllFromServer(API_LIST.aboutme);
+    commit('setAboutme', response.data.information);
   },
 };
 

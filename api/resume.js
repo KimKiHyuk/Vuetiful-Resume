@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+export const API_LIST = {
+  aboutme: 'http://keykim.iptime.org:8081/aboutme',
+  career: 'http://keykim.iptime.org:8081/career',
+  education: 'http://keykim.iptime.org:8081/education',
+  skill: 'http://keykim.iptime.org:8081/skill',
+  project: 'http://keykim.iptime.org:8081/project',
+};
 // eslint-disable-next-line no-unused-vars
 const mockAboutme = {
   information: {
@@ -12,6 +19,7 @@ const mockAboutme = {
   },
 };
 
+// eslint-disable-next-line no-unused-vars
 const mockCareer = {
   information: [
     {
@@ -52,24 +60,9 @@ const mockCareer = {
   ],
 };
 
-export default {
-  name: 'api',
-  fetchAboutMeFromServer: async () => {
-    try {
-      const response = await axios.get('http://keykim.iptime.org:8081/aboutme');
-      return response.information;
-    } catch (err) {
-      // action when error occurs
-    }
-    return mockAboutme.information;
-  },
-  fetchCareerFromServer: async () => {
-    try {
-      const response = await axios.get('http://keykim.iptime.org:8081/career');
-      return response.information;
-    } catch (err) {
-      // action when error occurs
-    }
-    return mockCareer.information;
-  },
-};
+// refactoring, api migration as one function, and give parameter
+export async function fetchAllFromServer(api) {
+  const response = await axios.get(api);
+  console.log(response);
+  return response;
+}
