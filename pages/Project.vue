@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-expansion-panel expand class="mb-4" v-for="(item,i) in info" :key="i">
+    <v-expansion-panel expand class="mb-4" v-for="(item,i) in allInformation" :key="i">
       <v-expansion-panel-content>
         <template v-slot:header>
           <div class="title font-weight-black">{{ item.category }}</div>
@@ -40,75 +40,20 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
-  data() {
-    return {
-      info: [
-        {
-          category: 'Client', // enum
-          project: [
-            {
-              title: 'WINDOWS Protection program',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-              tech: [
-                {
-                  skill: 'C#',
-                  usage: 'building for wpf',
-                },
-                {
-                  skill: 'python',
-                  usage: 'erase program',
-                },
-              ],
-              github: 'https://www.naver.com',
-            },
-            {
-              title: 'Opencv MFC',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-              tech: [
-                {
-                  skill: 'C#',
-                  usage: 'building for wpf',
-                },
-                {
-                  skill: 'python',
-                  usage: 'erase program',
-                },
-              ],
-              github: 'https://www.naver.com',
-            },
-          ],
-        },
-        {
-          category: 'Web', // enum
-          project: [
-            {
-              title: 'Resuem by vue',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-              tech: [
-                {
-                  skill: 'javascript',
-                  usage: 'frontend',
-                },
-                {
-                  skill: 'babel',
-                  usage: 'transpiler',
-                },
-              ],
-              github: 'https://www.naver.com',
-            },
-          ],
-        },
-      ],
-    };
+  name: 'Project',
+  methods: mapActions('projectStore', ['fetchInformation']),
+  openGithub: (url) => {
+    window.open(url, '_blank');
   },
-  methods: {
-    openGithub: (url) => {
-      window.open(url, '_blank');
-    },
+  computed: mapGetters('projectStore', ['allInformation']),
+  created() {
+    this.$store.dispatch('projectStore/fetchInformation');
+  },
+  data() {
+    return {};
   },
 };
 </script>

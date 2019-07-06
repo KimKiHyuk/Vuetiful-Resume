@@ -10,13 +10,13 @@ const getters = {
 
 const actions = {
   async fetchInformation({ commit }) {
-    const response = await fetchAllFromServer(API_LIST.career);
-    commit('setCareer', response.data);
+    const response = await fetchAllFromServer(API_LIST.project);
+    commit('setProject', response.data);
   },
 };
 
 const mutations = {
-  setCareer: (passedState, responseData) => {
+  setProject: (passedState, responseData) => {
     state.data = responseData;
   },
 };

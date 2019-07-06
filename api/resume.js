@@ -60,7 +60,6 @@ const mockCareer = {
   ],
 };
 
-// refactoring, api migration as one function, and give parameter
 export async function fetchAllFromServer(api) {
   const response = await axios.get(api);
   console.log(response);

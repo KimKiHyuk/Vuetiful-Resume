@@ -1,23 +1,23 @@
 import { API_LIST, fetchAllFromServer } from '../../api/resume';
 
 const state = {
-  information: {},
+  data: [],
 };
 
 const getters = {
-  allInformation: () => state.information,
+  allInformation: () => state.data,
 };
 
 const actions = {
   async fetchInformation({ commit }) {
     const response = await fetchAllFromServer(API_LIST.aboutme);
-    commit('setAboutme', response.data.information);
+    commit('setAboutme', response.data);
   },
 };
 
 const mutations = {
-  setAboutme: (passedState, information) => {
-    state.information = information;
+  setAboutme: (passedState, responseData) => {
+    state.data = responseData;
   },
 };
 

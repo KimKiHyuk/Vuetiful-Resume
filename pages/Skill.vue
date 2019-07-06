@@ -1,9 +1,9 @@
 <template>
   <v-container>
     <v-layout row wrap>
-      <v-flex xs12 sm6 md4 lg3 v-for="(skill, i) in skills" :key="i">
+      <v-flex xs12 sm6 md4 lg3 v-for="(skill, i) in allInformation.skills" :key="i">
         <div class="text-xs-center ma-4">
-          <v-avatar :size="avatarSize" color="indigo" :tile="tile">
+          <v-avatar :size="allInformation.avatarSize" color="indigo" :tile="tile">
             <img :src="skill.imageSource" alt="avatar">
           </v-avatar>
           <div>
@@ -24,91 +24,14 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
-  data() {
-    return {
-      avatarSize: 150,
-      skills: [
-        {
-          name: 'C#',
-          proficiency: 5,
-          imageSource: 'https://vuetifyjs.com/apple-touch-icon-180x180.png',
-          hashtag: [
-            {
-              name: 'wpf',
-            },
-            {
-              name: 'windows',
-            },
-          ],
-        },
-        {
-          name: 'JAVA',
-          proficiency: 5,
-          imageSource: 'https://vuetifyjs.com/apple-touch-icon-180x180.png',
-          hashtag: [
-            {
-              name: 'android',
-            },
-          ],
-        },
-        {
-          name: 'C/C++',
-          proficiency: 5,
-          imageSource: 'https://vuetifyjs.com/apple-touch-icon-180x180.png',
-          hashtag: [
-            {
-              name: 'windows device driver',
-            },
-            {
-              name: 'linux device driver',
-            },
-            {
-              name: 'kabasdasdasda',
-            },
-          ],
-        },
-        {
-          name: 'javascript',
-          proficiency: 3,
-          imageSource: 'https://vuetifyjs.com/apple-touch-icon-180x180.png',
-          hashtag: [
-            {
-              name: 'web front',
-            },
-            {
-              name: 'web backend',
-            },
-          ],
-        },
-        {
-          name: 'python',
-          proficiency: 5,
-          imageSource: 'https://vuetifyjs.com/apple-touch-icon-180x180.png',
-          hashtag: [
-            {
-              name: 'django',
-            },
-            {
-              name: 'crawler',
-            },
-          ],
-        },
-        {
-          name: 'Scala',
-          proficiency: 4,
-          imageSource: 'https://vuetifyjs.com/apple-touch-icon-180x180.png',
-          hashtag: [
-            {
-              name: 'django',
-            },
-            {
-              name: 'crawler',
-            },
-          ],
-        },
-      ],
-    };
+  name: 'Skill',
+  methods: mapActions('skillStore', ['fetchInformation']),
+  computed: mapGetters('skillStore', ['allInformation']),
+  created() {
+    this.$store.dispatch('skillStore/fetchInformation');
   },
 };
 </script>
