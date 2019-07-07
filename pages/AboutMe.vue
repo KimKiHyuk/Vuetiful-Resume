@@ -1,10 +1,10 @@
 <template>
   <v-container>
-    <v-card>
-      <v-layout>
+    <v-card  class="text-xs-center">
+      <v-layout row wrap>
         <v-flex>
-          <div class="text-xs-center">
-            <v-avatar class="ma-4" :tile="tile" :size="150" color="grey lighten-4">
+          <div>
+            <v-avatar class="ma-4" :size="150" color="grey lighten-4">
               <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar">
             </v-avatar>
             <div class="ma-3">
@@ -14,7 +14,7 @@
           </div>
         </v-flex>
         <v-flex>
-          <v-card-title primary-title>
+          <v-card-title class="justify-center">
             <div class="headline">{{ allInformation.greet }}</div>
           </v-card-title>
           <v-card-text>{{ allInformation.introduce }}</v-card-text>
