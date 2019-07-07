@@ -1,15 +1,17 @@
 <template>
   <v-container>
-    <v-timeline>
-      <v-timeline-item v-for="(edu, i) in allInformation" :key="i" color="red lighten-2" large>
-        <template v-slot:opposite></template>
-        <v-card class="elevation-2">
-          <v-card-title class="headline">{{ edu.institute }}</v-card-title>
+    <v-timeline dense>
+      <v-timeline-item v-for="(edu, i) in allInformation" :key="i" color="blue lighten-2" large>
+        <v-card class="elevation-5">
+          <v-card-title class="headline">
+            {{ edu.institute }}
+            <span class="subheading ml-3">{{ edu.period }}</span>
+          </v-card-title>
+
           <v-card-text>
             <div>
-              <p>{{ edu.type }}</p>
-              <p>{{ edu.description }}</p>
-              <p>{{ edu.period }}</p>
+              <p class="body-2">{{ edu.type }}</p>
+              <p class="body-1">{{ edu.description }}</p>
             </div>
           </v-card-text>
         </v-card>

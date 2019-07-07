@@ -1,16 +1,20 @@
 <template>
   <v-container>
-    <v-timeline>
-      <v-timeline-item v-for="(career, i) in allInformation" :key="i" :color="career.color" small>
-        <template v-slot:opposite>
-          <span
-            :class="`headline font-weight-bold ${career.color}--text`"
-          >{{ career.year }}년 {{ career.month }}월</span>
-        </template>
-        <div class="py-3">
-          <h2 :class="`headline font-weight-bold mb-3 ${career.color}--text`">{{ career.company }}</h2>
-          <div>{{ career.experience }}</div>
-        </div>
+    <v-timeline dense>
+      <v-timeline-item v-for="(career, i) in allInformation" :key="i" color="indigo accent-4" large>
+         <v-card class="elevation-5">
+          <v-card-title class="headline">
+            {{ career.company }}
+            <span class="subheading ml-3">{{ career.period }}</span>
+          </v-card-title>
+
+          <v-card-text>
+            <div>
+              <p class="body-2">{{ career.position }}</p>
+              <p class="body-1">{{ career.experience }}</p>
+            </div>
+          </v-card-text>
+        </v-card>
       </v-timeline-item>
     </v-timeline>
   </v-container>
