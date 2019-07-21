@@ -2,9 +2,13 @@
   <v-app>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <v-content>
-      <AppHeader/>
+      <header>
+        <AppHeader/>
+      </header>
       <nuxt/>
-      <AppFooter/>
+      <footer>
+        <AppFooter/>
+      </footer>
     </v-content>
   </v-app>
 </template>

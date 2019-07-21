@@ -1,10 +1,12 @@
 <template>
-  <div>
-  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  fetch({ redirect }) {
+    return redirect('/AboutMe');
+  },
+};
 </script>
 
 <style>
