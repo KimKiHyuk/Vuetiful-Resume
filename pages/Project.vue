@@ -59,10 +59,11 @@ export default {
   computed: mapGetters('projectStore', ['allInformation']),
   created() {
     this.$store.dispatch('projectStore/fetchInformation');
+    this.panel = [...Array(this.$store.getters['projectStore/allInformation'].length)].map(() => [true]);
   },
   data() {
     return {
-      panel: [...Array(2)].map(() => [true]), // this is little bit agly.. let me find a better way
+      panel: [],
     };
   },
 };
