@@ -9,8 +9,12 @@
           </v-toolbar-title>
           <v-spacer/>
           <v-btn class="hidden-sm-and-down" @click="getKorean" :disabled="!languageButtonSwitch">한국어</v-btn>
-          <v-btn class="hidden-sm-and-down" @click="getEnglish" :disabled="languageButtonSwitch">English</v-btn>
-          <div> {{ languageButtonSwitch }} </div>
+          <v-btn
+            class="hidden-sm-and-down"
+            @click="getEnglish"
+            :disabled="languageButtonSwitch"
+          >English</v-btn>
+          <div>{{ languageButtonSwitch }}</div>
         </v-toolbar>
 
         <v-navigation-drawer v-model="drawer" app>
@@ -52,7 +56,7 @@ export default {
       drawer: false,
       items: [
         { title: 'AboutMe', icon: 'assignment_ind', router: '/AboutMe' },
-        { title: 'Career', icon: 'location_city', router: '/Career' },
+        { title: 'Career', icon: 'location_city', router: '/English/Career' },
         { title: 'Education', icon: 'school', router: '/Education' },
         { title: 'Skill', icon: 'edit', router: '/Skill' },
         { title: 'Project', icon: 'work', router: '/Project' },
@@ -65,12 +69,18 @@ export default {
       console.log(this.languageButtonSwitch);
       // eslint-disable-line no-unused-vars
       this.languageButtonSwitch = false;
+      const currentUrl = window.location.pathname;
+      console.log(currentUrl);
+      this.$router.push('English/Career');
     },
     getEnglish() {
       console.log('eng');
       console.log(this.languageButtonSwitch);
       // eslint-disable-line no-unused-vars
       this.languageButtonSwitch = true;
+      const currentUrl = window.location.pathname;
+
+      console.log(currentUrl);
     },
   },
 };
