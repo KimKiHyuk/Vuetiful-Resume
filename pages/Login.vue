@@ -2,7 +2,8 @@
   <v-container>
     <div>
       <h2>Login</h2>
-      <v-form ref="form" v-model="valid" lazy-validation>
+      <v-spacer></v-spacer>
+      <v-form ref="form" v-model="valid">
         <div>
           <v-text-field
             v-model="username"
@@ -11,9 +12,6 @@
             label="username"
             required
           ></v-text-field>
-        </div>
-
-        <div>
           <v-text-field
             v-model="password"
             :counter="1024"
@@ -21,10 +19,7 @@
             label="password"
             required
           ></v-text-field>
-        </div>
-
-        <div>
-          <v-btn :disabled="!valid" color="green" @click="login">Validate</v-btn>
+          <v-btn class="green lighten-5" :disabled="!valid" color="green" @click="login">Login</v-btn>
         </div>
       </v-form>
     </div>
@@ -48,6 +43,7 @@ export default {
       if (this.$refs.form.validate()) {
         // eslint-disable-next-line indent
         // commit
+        console.log('validate success');
       }
     },
   },
