@@ -5,6 +5,9 @@ import careerStore from './modules/careerStore';
 import educationStore from './modules/educationStore';
 import projectStore from './modules/projectStore';
 import skillStore from './modules/skillStore';
+import authStore from './modules/authStore';
+
+const cookieparser = process.server ? require('cookieparser') : undefined;
 // import resume from '../api/resume';
 
 // Load Vuex
@@ -12,9 +15,17 @@ Vue.use(Vuex);
 
 const createStore = () => new Vuex.Store({
   actions: {
-    // eslint-disable-next-line no-unused-vars
-    nuxtServerInit({ commit }) {
-      console.log('server init');
+    nuxtServerInit({ commit }, { req }) {
+      let auth = null;
+      if (req.headers.cookie) {
+        const parsed = cookieparser.parse(req.headers.cookie);
+        try {
+          auth = JSON.parse(parsed.auth);
+        } catch (err) {
+          // No valid cookie found
+        }
+      }
+      commit('authStore/setAuth', auth);
     },
   },
   modules: {
@@ -23,6 +34,7 @@ const createStore = () => new Vuex.Store({
     educationStore,
     projectStore,
     skillStore,
+    authStore,
   },
 });
 

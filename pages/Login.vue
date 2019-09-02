@@ -27,6 +27,8 @@
 </template>
 
 <script>
+const Cookie = process.client ? require('js-cookie') : undefined;
+
 export default {
   name: 'login',
   data() {
@@ -42,7 +44,15 @@ export default {
     login() {
       if (this.$refs.form.validate()) {
         // eslint-disable-next-line indent
-        // commit
+        setTimeout(() => {
+          // we simulate the async request with timeout.
+          const auth = {
+            accessToken: 'someStringGotFromApiServiceWithAjax',
+          };
+          this.$store.commit('authStore/setAuth', auth); // mutating to store for client rendering
+          Cookie.set('auth', auth); // saving token in cookie for server rendering
+          this.$router.push('/ResumeManage');
+        }, 1000);
         console.log('validate success');
       }
     },
