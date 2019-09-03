@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <v-btn class="Red lighten-5" @click="exit">exit</v-btn>
     <v-layout row wrap>
       <v-form ref="form" @submit.prevent="submit">
         <v-select
@@ -11,7 +10,7 @@
           label="what part of resume?"
           required
         ></v-select>
-        <v-textarea v-model="form.bio" color="teal">
+        <v-textarea v-model="form.json" color="teal">
           <template v-slot:label>
             <div>
               your new resume is ready
@@ -23,14 +22,14 @@
           class="green lighten-5"
           :disabled="!formIsValid"
           text
-          color="primary"
           type="submit"
           @click="submit"
         >submit</v-btn>
+        <v-btn class="red lighten-5" text @click="exit">exit</v-btn>
       </v-form>
       <v-spacer></v-spacer>
       <v-card>
-        <v-text>layout about data</v-text>
+        <v-card-text>{{ this.allInformation[this.form.whichPartOfResume] }}</v-card-text>
       </v-card>
     </v-layout>
   </v-container>
@@ -41,13 +40,20 @@ export default {
   name: 'ResumeManage',
   middleware: 'authenticated',
   computed: {
-    formIsValid() {
-      return this.form.bio && this.form.whichPartOfResume;
+    allInformation() {
+      return this.$store.getters['formatStore/allInformation'];
     },
+    formIsValid() {
+      return this.form.json && this.form.whichPartOfResume;
+    },
+  },
+
+  created() {
+    this.$store.dispatch('formatStore/fetchInformation');
   },
   data() {
     const defaultForm = Object.freeze({
-      bio: '',
+      json: '',
       whichPartOfResume: '',
     });
 
@@ -56,13 +62,15 @@ export default {
       rules: {
         resumePart: [val => (val || '').length > 0 || 'which part of resume?'],
       },
-      partOfResume: ['aboutme', 'career', 'education', 'project', 'skill'],
+      partOfResume: Object.keys(
+        this.$store.getters['formatStore/allInformation'],
+      ),
       defaultForm,
     };
   },
   methods: {
     submit() {
-      console.log(this.form);
+      // axios put likes /format/$(whichPartOfResume)
     },
     exit() {
       this.$store.commit('authStore/setAuth', null);

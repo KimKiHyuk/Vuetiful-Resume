@@ -6,6 +6,7 @@ import educationStore from './modules/educationStore';
 import projectStore from './modules/projectStore';
 import skillStore from './modules/skillStore';
 import authStore from './modules/authStore';
+import formatStore from './modules/formatStore';
 
 const cookieparser = process.server ? require('cookieparser') : undefined;
 // import resume from '../api/resume';
@@ -35,6 +36,7 @@ const createStore = () => new Vuex.Store({
     projectStore,
     skillStore,
     authStore,
+    formatStore,
   },
 });
 

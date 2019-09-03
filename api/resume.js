@@ -8,6 +8,7 @@ export const API_LIST = {
   education: baseUrl.concat('/education'),
   skill: baseUrl.concat('/skill'),
   project: baseUrl.concat('/project'),
+  format: baseUrl.concat('/format'),
 };
 
 export async function fetchAllFromServer(api) {
