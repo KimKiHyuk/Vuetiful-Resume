@@ -1,6 +1,25 @@
-# keyResume
+# Vue.js Application for resume frontend 
 
-> resume constructed by vue, vuex, vuetify, and nuxt 
+# libraries
+* Vuex for state management
+* Nuxt for SEO
+* Vuetify for material design
+
+# demo
+
+## Supporting various device environments
+* desktop
+<img src="desktop_size.PNG">
+
+* tablet
+<img src="tablet_size.PNG">
+
+* small tablet
+<img src="table_size_smaller.PNG">
+
+* mobile phone
+<img src="phone_size.PNG">
+
 
 ## Build Setup
 
