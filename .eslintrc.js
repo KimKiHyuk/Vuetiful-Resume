@@ -10,10 +10,11 @@ module.exports = {
   extends: ['plugin:nuxt/recommended', 'airbnb-base'],
   // add your custom rules here
   rules: {
+    'arrow-parens': [2, "as-needed"],
     'linebreak-style': 0,
     globals: {},
     settings: {
     },
-   'max-len': ["error", { "code": 1000 }]
+    'max-len': ["error", { "code": 1000 }]
   },
 };
