@@ -6,7 +6,7 @@ const state = {
 
 const getters = {
   // eslint-disable-next-line arrow-body-style
-  loggedIn: (passedState) => {
+  loggedIn: passedState => {
     console.log('loggedIN ', state.auth);
     return state.auth !== null;
   },
