@@ -1,11 +1,11 @@
 <template>
   <v-container>
-    <v-card  class="text-xs-center">
+    <v-card class="text-xs-center">
       <v-layout row wrap>
         <v-flex>
           <div>
             <v-avatar class="ma-4" :size="150" color="grey lighten-4">
-              <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar">
+              <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar" />
             </v-avatar>
             <div class="ma-3">
               <h3>{{ allInformation.job }}</h3>
