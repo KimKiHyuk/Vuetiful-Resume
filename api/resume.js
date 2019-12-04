@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://127.0.0.1:8081';
+const baseUrl = 'http://127.0.0.1:3000';
 
 export const API_LIST = {
   aboutme: baseUrl.concat('/aboutme'),
@@ -13,6 +13,5 @@ export const API_LIST = {
 
 export async function fetchAllFromServer(api) {
   const response = await axios.get(api);
-  console.log(response);
   return response;
 }
