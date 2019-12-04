@@ -2,8 +2,8 @@
   <v-container>
     <v-layout row wrap>
       <v-flex xs12 sm6 md4 lg3 v-for="(skill, i) in allInformation" :key="i">
-        <div class="text-xs-center ma-4">
-          <v-avatar :size="allInformation.avatarSize" color="indigo">
+        <div class="text-center ma-5">
+          <v-avatar :size="120" color="indigo">
             <img :src="skill.imageSource" alt="avatar" />
           </v-avatar>
           <div>

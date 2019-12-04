@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="primary lighten-1" padless absolute>
+  <v-footer color="primary lighten-1" padless app>
     <v-row justify="center" no-gutters>
       <v-btn
         v-for="element in links"

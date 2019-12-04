@@ -1,11 +1,11 @@
 <template>
   <v-container>
-    <v-card class="text-xs-center">
+    <v-card class="text-center">
       <v-layout row wrap>
         <v-flex>
           <div>
             <v-avatar class="ma-4" :size="150" color="grey lighten-4">
-              <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar" />
+              <img :src="allInformation.profileSrc" alt="avatar" />
             </v-avatar>
             <div class="ma-3">
               <h3>{{ allInformation.job }}</h3>
@@ -31,8 +31,5 @@ export default {
   name: 'AboutMe',
   methods: mapActions('aboutMeStore', ['fetchInformation']),
   computed: mapGetters('aboutMeStore', ['allInformation']),
-  created() {
-    this.$store.dispatch('aboutMeStore/fetchInformation');
-  },
 };
 </script>
