@@ -2,18 +2,18 @@
   <v-container>
     <v-app-bar color="deep-purple accent-4" dark app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>My files</v-toolbar-title>
+      <v-toolbar-title>Resume</v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app>
       <v-list class="pa-0">
         <v-list-item>
           <v-list-item-avatar>
-            <img src="https://randomuser.me/api/portraits/men/85.jpg" />
+            <img :src="allInformation.profileSrc" />
           </v-list-item-avatar>
 
           <v-list-item-content>
-            <v-list-item-title>ki-hyuk KIM</v-list-item-title>
+            <v-list-item-title>key Kim</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -35,7 +35,14 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
+  methods: mapActions('aboutMeStore', ['fetchInformation']),
+  computed: mapGetters('aboutMeStore', ['allInformation']),
+  created() {
+    this.$store.dispatch('aboutMeStore/fetchInformation');
+  },
   data() {
     return {
       drawer: false,
