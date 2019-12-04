@@ -1,7 +1,7 @@
 import { API_LIST, fetchAllFromServer } from '../../api/resume';
 
 const state = {
-  data: [],
+  data: {},
 };
 
 const getters = {
