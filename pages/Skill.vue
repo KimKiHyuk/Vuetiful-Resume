@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex xs12 sm6 md4 lg3 v-for="(skill, i) in allInformation" :key="i">
         <div class="text-center ma-5">
-          <v-avatar :size="120" color="indigo">
+          <v-avatar :size="120" color="transparent">
             <img :src="skill.imageSource" alt="avatar" />
           </v-avatar>
           <div>
