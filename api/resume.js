@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://127.0.0.1:3000';
+const baseUrl = 'secret key';
 
 export const API_LIST = {
   aboutme: baseUrl.concat('/aboutme'),
