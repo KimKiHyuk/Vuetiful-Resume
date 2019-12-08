@@ -5,4 +5,8 @@ node_js:
 cache:
   directroies:
    - "node_modules"
+   
+after_success:
+ - "npm run build
+
   
