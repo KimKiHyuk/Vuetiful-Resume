@@ -15,9 +15,13 @@ const actions = {
   },
 };
 
+const sortField = 'proficiency';
+
 const mutations = {
   setSkill: (passedState, responseData) => {
-    state.data = responseData;
+    state.data = responseData.sort(
+      (paramLeft, paramRight) => paramRight[sortField] - paramLeft[sortField],
+    );
   },
 };
 
