@@ -11,7 +11,7 @@
           <v-card-text>
             <div>
               <p class="body-2">{{ career.position }}</p>
-              <p class="body-1">{{ career.experience }}</p>
+              <p v-html="htmlParseHelper(career.experience)" class="body-1"></p>
             </div>
           </v-card-text>
         </v-card>
@@ -22,10 +22,12 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import newLine2Br from '../utility/htmlParser';
 
 export default {
   name: 'Career',
-  methods: mapActions('careerStore', ['fetchInformation']),
+  methods: { htmlParseHelper: json => newLine2Br(json) },
+  ...mapActions('careerStore', ['fetchInformation']),
   computed: mapGetters('careerStore', ['allInformation']),
   created() {
     this.$store.dispatch('careerStore/fetchInformation');
