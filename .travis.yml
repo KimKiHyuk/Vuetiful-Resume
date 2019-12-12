@@ -2,10 +2,7 @@ language: node_js
 
 node_js:
   - "stable"
-cache:
-  directroies:
-   - "node_modules"
-   
+
 script:
   - npm install
   - npm run build
