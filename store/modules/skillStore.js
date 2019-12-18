@@ -20,7 +20,7 @@ const sortField = 'proficiency';
 const mutations = {
   setSkill: (passedState, responseData) => {
     state.data = responseData.sort(
-      (paramLeft, paramRight) => paramRight[sortField] - paramLeft[sortField],
+      (paramLeft, paramRight) => paramRight.fields[sortField] - paramLeft.fields[sortField],
     );
   },
 };
