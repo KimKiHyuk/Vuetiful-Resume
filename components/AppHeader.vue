@@ -8,8 +8,8 @@
     <v-navigation-drawer v-model="drawer" app>
       <v-list class="pa-0">
         <v-list-item>
-          <v-list-item-avatar>
-            <img :src="allInformation.profileSrc" />
+          <v-list-item-avatar v-if="allInformation !== undefined">
+            <img :src="allInformation[0].fields.profile_image" />
           </v-list-item-avatar>
 
           <v-list-item-content>
