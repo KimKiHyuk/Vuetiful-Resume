@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/KimKiHyuk/Vuetiful-Resume.svg?branch=master)](https://travis-ci.org/KimKiHyuk/Vuetiful-Resume)
 
+# web site
+* https://vuetiful-resume.herokuapp.com
 
 # Vue.js Application for resume frontend 
 
@@ -7,9 +9,6 @@
 * Vuex for state management
 * Nuxt for SEO
 * Vuetify for material design
-
-# web site
-* https://vuetiful-resume.herokuapp.com
 
 ## Supporting various device environments
 * desktop
